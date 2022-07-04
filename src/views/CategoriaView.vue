@@ -62,8 +62,12 @@ export default {
             <td>{{ categoria.id }}</td>
             <td>{{ categoria.categoria }}</td>
             <td>
-              <button @click="alerta(livro)">Editar</button>
-              <button @click="excluir(livro)">Excluir</button>
+              <button class="btn btn-primary" @click="alerta(livro)">
+                Editar
+              </button>
+              <button class="btn btn-danger" @click="excluir(livro)">
+                Excluir
+              </button>
             </td>
           </tr>
         </tbody>

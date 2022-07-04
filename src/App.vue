@@ -18,5 +18,4 @@ import HeaderComp from "./components/HeaderComp.vue";
 
   font-weight: normal;
 }
-
 </style>

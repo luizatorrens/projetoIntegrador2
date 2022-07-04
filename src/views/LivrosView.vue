@@ -70,34 +70,40 @@ export default {
 <template>
   <div class="position-absolute top-50 start-50 translate-middle">
     <div class="title">
-      <h2>Gerencimento de Livros</h2>
+      <h2 class="title" >Gerencimento de Livros</h2>
     </div>
-    <div class="form-input-group">
+    <div class="input-group container flex">
       <input
+        class="col form-control"
         type="text"
         v-model="novo_livro"
         @keyup.enter="salvar"
         placeholder="Livros"
       />
       <input
+        class="col form-control"
         type="text"
         v-model="novo_autor"
         @keyup.enter="salvar"
         placeholder="Autores"
       />
       <input
+        class="col form-control"
         type="text"
         v-model="nova_categoria"
         @keyup.enter="salvar"
         placeholder="Categorias"
       />
-      <input
-        type="text"
-        v-model="nova_editora"
-        @keyup.enter="salvar"
-        placeholder="Editoras"
-      />
-      <button @click="salvar">Salvar</button>
+      <select class="form-select" v-model="nova_editora">
+        <option value="" class="disabled" disabled>Selecione a editora</option>
+        <option value="editora 1">Editora 1</option>
+        <option value="editora 2">Editora 2</option>
+        <option value="editora 3">Editora 3</option>
+        <option value="editora 4">Editora 4</option>
+        <option value="editora 5">Editora 5</option>
+      </select>
+
+      <button class="btn btn-success" @click="salvar">Salvar</button>
     </div>
     <div class="list-items">
       <table>
@@ -119,9 +125,9 @@ export default {
             <td>{{ livro.categoria }}</td>
             <td>{{ livro.editora }}</td>
 
-            <td>
-              <button @click="alerta(livro)">Editar</button>
-              <button @click="excluir(livro)">Excluir</button>
+            <td class="button-group">
+              <button class="btn btn-primary" @click="alerta(livro)">Editar</button>
+              <button class="btn btn-danger" @click="excluir(livro)">Excluir</button>
             </td>
           </tr>
         </tbody>
@@ -130,4 +136,19 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.disabled {
+  color: gray;
+}
+.title {
+  color: violet !important;
+  text-align: center !important;
+  padding: 10px;
+}
+tr td {
+  text-align: center !important;
+}
+thead {
+  color: green !important;
+}
+</style>
