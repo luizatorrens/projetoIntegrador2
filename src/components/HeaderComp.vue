@@ -1,15 +1,15 @@
 <template>
     <header>
-        <nav class="nav nav-pills nav-justified">
-                <span class="nav-link links"> <RouterLink to="/autor">Autor</RouterLink> </span>
-                <span class="nav-link links"> <RouterLink to="/editora">Editora</RouterLink> </span>
-                <span class="nav-link links"> <RouterLink to="/categoria">Categoria</RouterLink> </span>
-                <span class="nav-link links"> <RouterLink to="/livros">Livros</RouterLink> </span>
-        </nav>
+        <div class="flex">
+                <div class="btn btn-light"> <RouterLink to="/autor" class="nav-link links">Autor</RouterLink> </div>
+                <div class="btn btn-light"> <RouterLink to="/editora" class="nav-link links">Editora</RouterLink> </div>
+                <div class="btn btn-light"> <RouterLink to="/categoria" class="nav-link links">Categoria</RouterLink> </div>
+                <div class="btn btn-light"> <RouterLink to="/livros" class="nav-link links">Livros</RouterLink> </div>
+        </div>
     </header>
 </template>
 <style>
-.links {
-    text-decoration: none;
+ .btn{
+    color: black;
 }
 </style>
