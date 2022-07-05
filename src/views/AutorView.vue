@@ -36,17 +36,20 @@ export default {
 
 <template>
   <div class="position-absolute top-50 start-50 translate-middle">
-    <div class="title">
-      <h2>Gerencimento de Autores</h2>
-    </div>
-    <div class="form-input">
-      <input
-        type="text"
-        v-model="novo_autor"
-        @keyup.enter="salvar"
-        placeholder="Autores"
-      />
-      <button @click="salvar">Salvar</button>
+    <div class="formulario">
+      <div>
+        <h2 class="title">Gerencimento de Autores</h2>
+      </div>
+      <div class="form-input container d-flex">
+        <input
+          class="col-10"
+          type="text"
+          v-model="novo_autor"
+          @keyup.enter="salvar"
+          placeholder="Autores"
+        />
+        <button class="btn btn_save" @click="salvar">Salvar</button>
+      </div>
     </div>
     <div class="list-items">
       <table>
@@ -61,9 +64,10 @@ export default {
           <tr v-for="autor in autores" :key="autor.id">
             <td>{{ autor.id }}</td>
             <td>{{ autor.name }}</td>
-            <td>
-              <button @click="alerta(livro)">Editar</button>
-              <button @click="excluir(livro)">Excluir</button>
+
+            <td class="button-group d-flex salvar_editar">
+              <button class="btn btn-primary" @click="alerta(livro)">Editar</button>
+              <button class="btn btn-danger" @click="excluir(livro)">Excluir</button>
             </td>
           </tr>
         </tbody>
